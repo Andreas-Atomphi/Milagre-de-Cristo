@@ -1,0 +1,32 @@
+:root {
+	--content-width: 70%;
+}
+
+html,
+body {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.content {
+	background-color: #05c;
+	width: var(--content-width);
+	margin-left: calc((100% - var(--content-width)) / 2);
+	margin-right: calc((100% - var(--content-width)) / 2);
+}
+
+.content h1 {
+	color: #fff;
+}
+
+.part {
+	width: 100%;
+}
+
+.part + .part {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}

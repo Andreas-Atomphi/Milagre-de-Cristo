@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: http://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="476pt"
+    height="475pt"
+    viewBox="0 0 476 475">
+<defs/>
+<path id="shape0" transform="translate(274.84003505, 108.89444508)" fill="#cad0d4" fill-rule="evenodd" stroke="#cad0d4" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel" d="M19.6146 78.4293C35.3628 102.756 101.01 53.567 131.039 0C125.462 142.989 26.8685 184.074 8.00268 188.09C-13.59 175.494 14.8255 80.5573 19.6146 78.4293Z"/><path id="shape1" transform="translate(33.024412307, 61.458793334)" fill="#ffffff" fill-rule="evenodd" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel" d="M236.553 76.7248C247.431 68.5108 272.446 69.3748 273.803 87.7248C273.85 100.792 268.226 121.434 264.553 129.225C261.22 138.461 262.358 133.436 261.145 143.116C263.384 184.953 258.613 210.648 242.053 248.475C250.861 256.993 263.698 266.472 275.553 278.475C263.961 331.051 138.738 345.692 119.053 307.975C136.87 278.192 159.075 270.337 167.053 256.475C163.625 256.579 167.516 248.026 163.198 247.9C133.481 241.842 -68.1089 241.131 23.8424 0C47.9239 47.4613 179.201 139.639 209.811 129.401C220.173 104.88 227.673 83.7848 236.553 76.7248Z"/><path id="shape2" transform="matrix(1.1479870195 0 0 1.1479870195 285.81572542 174.41174149)" fill="#ffa400" fill-rule="evenodd" stroke="#ffa400" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel" d="M15.4046 17.8544L2.67663 11.4905C0.201761 10.3709 -0.682123 7.12999 0.555314 4.94975C1.90039 2.52359 3.7004 0.552358 6.91928 0L11.5155 2.12132C13.9118 8.56385 15.2081 13.8082 15.4046 17.8544Z"/><path id="shape3" transform="matrix(1.1479870195 0 0 1.1479870195 285.93401417 185.47184364)" fill="#ba7700" fill-rule="evenodd" stroke="#ba7700" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel" d="M13.7105 7.68979C15.331 8.22012 -0.461052 0.707107 0.0103528 0C5.52971 4.06586 10.0964 6.62913 13.7105 7.68979Z"/>
+</svg>
