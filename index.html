@@ -9,15 +9,16 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/layout.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/paraxify.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 	<style>
-		#bg1 {
-			background-image: url('img/igreja_por_dentro.jpeg');
-			height: 220vh;
-			background-size: cover;
-			filter: brightness(75%);
+		@media screen and (min-width: 800px) {
+			#bg1 {
+				background-image: url('img/igreja_por_dentro.jpeg');
+				height: 220vh;
+				background-size: cover;
+				filter: brightness(75%);
+			}
 		}
 	</style>
 </head>
@@ -123,13 +124,22 @@
 		}
 	})
 
-	function scrollBG() {
-		var scroll = $(this).scrollTop();
-		$(".bgParallax").css("background-position", `center ${(scroll * -.5) - 200}px`)
+	function decideParallax() {
+		scrollBG = function () {
+			var scroll = $(this).scrollTop();
+			$(".bgParallax").css("background-position", `center ${(scroll * -.5) - 400}px`)
+		}
+		console.log(/Mobi|Android/i.test(navigator.userAgent))
+		if (!/Mobi|Android/i.test(navigator.userAgent)) {
+			scrollBG
+			$(window).scroll(scrollBG)
+		} else {
+			scrollBG = null;
+		}
 	}
 
-	$(window).scroll(scrollBG)
-	$(window).ready(scrollBG)
+	$(window).ready(decideParallax())
+	$(window).resize(decideParallax())
 </script>
 
 </html>

@@ -65,9 +65,15 @@ p {
 }
 
 @media screen and (max-width: 799px) {
+    body {
+        background-color: #ccc;
+    }
+    p {
+        font-size: 1rem;
+    }
     .content {
         top: 100px;
-        width: 95%;
+        width: 90%;
         margin-left: 2.5%;
         margin-right: 2.5%;
         padding: 15px;
