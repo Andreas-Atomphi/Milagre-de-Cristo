@@ -15,7 +15,7 @@
 		@media screen and (min-width: 800px) {
 			#bg1 {
 				background-image: url('img/igreja_por_dentro.jpeg');
-				height: 220vh;
+				height: 250vh;
 				background-size: cover;
 				filter: brightness(75%);
 			}
@@ -56,7 +56,7 @@
 		<div class="part" id="boas-vindas">
 			<h1>Bem-vindo!!!</h1>
 			<p style="margin-left: 15px;">
-				Seja bem-vindo a Igreja Pentecostal Milagre de Jesus!!! Que Deus
+				Seja bem-vindo a Igreja Pentecostal Milagre de Cristo!!! Que Deus
 				esteja contigo, sinta-se à vontade para olhar nossa página, e
 				quando estiver livre, que tal nos
 				<a href="#onde-estamos">visitar</a>?
@@ -66,13 +66,13 @@
 		<div class="part" id="quem-somos">
 			<h1>Quem somos? Que bom que perguntou!!!</h1>
 			<p style="margin-left: 15px;">
-				Somos irmãos com o objetivo de adorar, louvar e seguir o nosso senhor e salvador Jesus Cristo.
+				Somos irmãos com o objetivo de adorar, louvar e seguir o nosso Senhor e Salvador Jesus Cristo.
 			</p>
 			<h2 style="margin-left: 15px; margin-top: 20px;">
 				Missão
 			</h2>
 			<p style="margin-left: 30px;">
-				Evangelizar, trazendo para Cristo os que não o conhecem e os que se perderam dele.
+				Evangelizar, trazendo para Cristo os que não O conhecem e os que se perderam dEle.
 			</p>
 			<h2 style="margin-left: 15px;">
 				Visão
@@ -124,22 +124,24 @@
 		}
 	})
 
-	function decideParallax() {
+	function decideParallax(startScrolling = false) {
+		if (typeof startScrolling != "boolean")
+			throw TypeError(`O argumento startScrolling aceita apenas o tipo Booleana (true ou false) mas o tipo detectado foi ${typeof startScrolling}, por tanto não será executado`)
 		scrollBG = function () {
 			var scroll = $(this).scrollTop();
-			$(".bgParallax").css("background-position", `center ${(scroll * -.5) - 400}px`)
+			$(".bgParallax").css("background-position", `center ${(scroll * -.5) - (300 - (document.body.clientWidth * 0.075))}px`)
 		}
-		console.log(/Mobi|Android/i.test(navigator.userAgent))
+		if (startScrolling) scrollBG();
 		if (!/Mobi|Android/i.test(navigator.userAgent)) {
-			scrollBG
+
 			$(window).scroll(scrollBG)
-		} else {
-			scrollBG = null;
+			return
 		}
+		scrollBG = null;
 	}
 
-	$(window).ready(decideParallax())
-	$(window).resize(decideParallax())
+	$(document).on('ready', decideParallax(true))
+	$(window).on('resize', decideParallax(false))
 </script>
 
 </html>
