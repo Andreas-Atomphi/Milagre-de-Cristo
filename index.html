@@ -10,16 +10,32 @@
 	<link rel="stylesheet" href="css/layout.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
 	<link rel="icon" href="favicon.ico">
 	<style>
 		@media screen and (min-width: 800px) {
 			#bg1 {
 				background-image: url('img/igreja_por_dentro.jpeg');
-				height: 250vh;
+				height: 300vh;
 				background-size: cover;
 				filter: brightness(75%);
 			}
+		}
+
+		.facebook-icon {
+			overflow: hidden;
+			background-repeat: no-repeat;
+			width: 49px;
+			height: 49px;
+			border-radius: 100px;
+			background-color: white;
+			font-family: 'facebook';
+			transition: 0.5s;
+			border: #bbb 1px solid;
+		}
+
+		.facebook-icon:hover {
+			transition: 0.5s;
+			width: 190px;
 		}
 	</style>
 </head>
@@ -45,11 +61,29 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#onde-estamos">Onde vocês estão?</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#dias-horarios">Quais os dias/horários vocês estão abertos?</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<filter id="better-blur">
+
+	<div class="sticky-bottom">
+		<a href="https://www.facebook.com/laercio.rocha.52056" target="_blank" rel="noopener noreferrer"
+			class="normal-anchor">
+			<div class="facebook-icon">
+				<div style="width: 49px; height: 49px; background-image: url('img/facebook-white-48dp.svg');"
+					class="fc-image">
+					<p style="position: relative; text-indent: 47px; top: 10px; font-size: 25pt; user-select: none; ">
+						acebook
+					</p>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<filter id=" better-blur">
 		<div class="bgParallax" id="bg1"></div>
 	</filter>
 
@@ -94,36 +128,72 @@
 			<h1>Venha nos visitar!!!</h1>
 			<p style="margin-bottom: 50px"></p>
 			<div style="position: relative; left: 15%; right: 15%">
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.71501926978996!2d-46.57065805547026!3d-23.48064501170677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef58db417b7e7%3A0x84701b7a4c836cb1!2sIgreja%20evang%C3%A9lica%20pentecostal%20Milagre%20De%20Cristo%20(Filial1)!5e0!3m2!1spt-BR!2sbr!4v1609265097420!5m2!1spt-BR!2sbr"
-					frameborder="0" style="border: 0; width: 70%; height: 300px" allowfullscreen="true"
-					aria-hidden="false" tabindex="0">
+
+				<h3 id="mainFrameTitle"></h3>
+				<iframe id="mainFrame" width="70%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
 					<div>
 						<p class="h5">
-							Endereço: Rua Álvaro dos Santos, 177 - Vila Medeiros<br />
+							Endereço: Rua Combate da Lagoa Branca, 125<br />
 							Estado: São Paulo<br />
 							Cidade: SP<br />
-							CEP: 02227-210
+							CEP: 02141-080
 						</p>
 						<a style="margin-bottom: 50px"
 							href="https://www.google.com.br/maps/place/R.+%C3%81lvaro+dos+Santos,+177+-+Vila+Medeiros,+S%C3%A3o+Paulo+-+SP,+02227-210/@-23.4806134,-46.5728631,17z/data=!3m1!4b1!4m5!3m4!1s0x94cef58db4308f21:0xc765bcbd5222ebee!8m2!3d-23.4806134!4d-46.5706744">Clique
 							aqui para ver no mapa</a>
 						<img src="img/frente_da_igreja.jpeg"
 							style="position: relative; width: 70%; left: 0%; right: 30%" />
+					</div>
 				</iframe>
+
 			</div>
+			<button style="position: relative; left: 90%;" id="select" class="btn btn-primary"></button>
+		</div>
+		<div class="part" id="dias-horarios">
+			<h1>Ah, nossa agenda?</h1>
+			<p style="font-size: 12pt;">OBS: Não há cultos nas segundas</p>
+			<table class="table agenda" style="user-select: text;">
+				<thead>
+					<tr>
+						<th scope="col">Horários</th>
+						<th scope="col">Terça-feira</th>
+						<th scope="col">Quarta-feira</th>
+						<th scope="col">Quinta-feira</th>
+						<th scope="col">Sexta-feira</th>
+						<th scope="col">Sábado</th>
+						<th scope="col">Domingo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Manhã</th>
+						<td>08:00h-09:30h</td>
+						<td>08:00h-09:30h</td>
+						<td>08:00h-09:30h</td>
+						<td>08:00h-09:30h</td>
+						<td>08:00h-09:30h</td>
+						<td>&#x2716;</td>
+					</tr>
+					<tr>
+						<th scope="row">Noite</th>
+						<td>19:30h-21:30h</td>
+						<td>&#x2716;</td>
+						<td>19:30h-21:30h</td>
+						<td>19:30h-21:30h</td>
+						<td>19:30h-21:30h</td>
+						<td>19:00h-21:00h</td>
+					</tr>
+				</tbody>
+			</table>
+
 		</div>
 	</div>
 
 </body>
-
+<script src="js/main.js"></script>
 <script>
-	$(".nav-link").click(function () {
-		$(".nav-link").removeClass("active")
-		if (!$(this).hasClass("active")) {
-			$(this).addClass("active")
-		}
-	})
+
+
 
 	function decideParallax(startScrolling = false) {
 		if (typeof startScrolling != "boolean")
@@ -143,6 +213,41 @@
 
 	$(document).on('ready', decideParallax(true))
 	$(window).on('resize', decideParallax(false))
+
+	Number.prototype.between = function (num1, num2) {
+		return this > num1 && this < num2
+	}
+
+	$(window).on('scroll', function () {
+		var pos = $(this).scrollTop() + 200;
+
+		var navs = $(".part").map((i, e) => {
+			return e.getBoundingClientRect().top + $(window).scrollTop()
+		});
+		var navs_nw = [].fill("", 0, navs.length)
+
+		for (var i = 0; i < navs.length - 1; i++) {
+			navs_nw[i] = pos.between(navs[i], navs[i + 1]) ? function (a, e) { e.classList.add(a) } : function (a, e) { e.classList.remove(a) }
+		}
+		navs_nw[i] = (pos > navs[navs.length - 1]) ? function (a, e) { e.classList.add(a) } : function (a, e) { e.classList.remove(a) }
+		$(".nav-link").map((i, e) => {
+			navs_nw[i]("active", e)
+		})
+	})
+
+	$("#mainFrame").each(function () {
+		$(this).first().attr("src", embeds.igrejas[0].src)
+		$("#mainFrameTitle").first().html(`${embeds.igrejas[0].titulo}:`)
+		$("#select").first().html(`${embeds.igrejas[1].titulo}`)
+	})
+
+	$("#select").click(function () {
+		selector += 1
+		selector = selector % embeds.igrejas.length;
+		$("#mainFrameTitle").first().html(`${embeds.igrejas[selector].titulo}:`)
+		$("#mainFrame").attr("src", embeds.igrejas[selector].src)
+		$(this).first().html(`${embeds.igrejas[selector].next}`)
+	})
 </script>
 
 </html>
