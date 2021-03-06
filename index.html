@@ -14,6 +14,20 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<link rel="icon" href="favicon.ico">
 	<style>
+		@media screen and (max-width: 799px) {
+
+			.frameContainer {
+				position: relative;
+				left: 7%;
+				right: 8%
+			}
+
+			#mainFrame {
+				width: 85%;
+			}
+
+		}
+
 		@media screen and (min-width: 800px) {
 			#bg1 {
 				background-image: url('img/igreja_por_dentro.jpeg');
@@ -21,6 +35,20 @@
 				background-size: cover;
 				filter: brightness(75%);
 			}
+
+			#mainFrame {
+				width: 70%;
+			}
+
+			.frameContainer {
+				position: relative;
+				left: 15%;
+				right: 15%
+			}
+		}
+
+		.frameContainer {
+			display: block;
 		}
 
 		.facebook-icon {
@@ -129,10 +157,10 @@
 		<div class="part" id="onde-estamos">
 			<h1>Venha nos visitar!!!</h1>
 			<p style="margin-bottom: 50px"></p>
-			<div style="position: relative; left: 15%; right: 15%">
+			<div class="frameContainer">
 
 				<h3 id="mainFrameTitle"></h3>
-				<iframe id="mainFrame" width="70%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+				<iframe id="mainFrame" height="300" style="border:0;" allowfullscreen="" loading="lazy">
 					<div>
 						<p class="h5">
 							Endereço: Rua Combate da Lagoa Branca, 125<br />
@@ -147,9 +175,10 @@
 							style="position: relative; width: 70%; left: 0%; right: 30%" />
 					</div>
 				</iframe>
-
 			</div>
-			<button style="position: relative; left: 90%;" id="select" class="btn btn-primary"></button>
+			<br />
+			<button style="position: relative; left: calc(100% - 70px);" id="select" class="btn btn-primary"></button>
+			<div style="height: 20px;"></div>
 		</div>
 		<div class="part" id="dias-horarios">
 			<h1>Ah sim, nossa agenda?</h1>
@@ -171,7 +200,7 @@
 									<p>De manhã: 08:00h-09:30h {{consagrar}}</p>
 								</li>
 								<li class="list-group-item">
-									<p>De noite: 19:30h-21:30h {{cultuar}}</p>
+									<p>De noite: 19:30h-21:30h {{doutrina}}</p>
 								</li>
 							</ul>
 						</div>
@@ -351,7 +380,8 @@
 		el: '#accordion',
 		data: {
 			consagrar: '(Oração e consagração)',
-			cultuar: '(Culto)'
+			cultuar: '(Culto)',
+			doutrina: '(Culto de doutrina)'
 		}
 	})
 </script>
