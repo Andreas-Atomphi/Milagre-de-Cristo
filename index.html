@@ -8,14 +8,16 @@
 	<title>Igreja Pentecostal Milagre de Cristo - Seja bem-vindo!!!</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/layout.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<link rel="icon" href="favicon.ico">
 	<style>
 		@media screen and (min-width: 800px) {
 			#bg1 {
 				background-image: url('img/igreja_por_dentro.jpeg');
-				height: 300vh;
+				height: 350vh;
 				background-size: cover;
 				filter: brightness(75%);
 			}
@@ -150,50 +152,146 @@
 			<button style="position: relative; left: 90%;" id="select" class="btn btn-primary"></button>
 		</div>
 		<div class="part" id="dias-horarios">
-			<h1>Ah, nossa agenda?</h1>
+			<h1>Ah sim, nossa agenda?</h1>
 			<p style="font-size: 12pt;">OBS: Não há cultos nas segundas</p>
-			<table class="table agenda" style="user-select: text;">
-				<thead>
-					<tr>
-						<th scope="col">Horários</th>
-						<th scope="col">Terça-feira</th>
-						<th scope="col">Quarta-feira</th>
-						<th scope="col">Quinta-feira</th>
-						<th scope="col">Sexta-feira</th>
-						<th scope="col">Sábado</th>
-						<th scope="col">Domingo</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">Manhã</th>
-						<td>08:00h-09:30h</td>
-						<td>08:00h-09:30h</td>
-						<td>08:00h-09:30h</td>
-						<td>08:00h-09:30h</td>
-						<td>08:00h-09:30h</td>
-						<td>&#x2716;</td>
-					</tr>
-					<tr>
-						<th scope="row">Noite</th>
-						<td>19:30h-21:30h</td>
-						<td>&#x2716;</td>
-						<td>19:30h-21:30h</td>
-						<td>19:30h-21:30h</td>
-						<td>19:30h-21:30h</td>
-						<td>19:00h-21:00h</td>
-					</tr>
-				</tbody>
-			</table>
+			<p>Horários:</p>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header btn btn-link" data-toggle="collapse" data-target="#terça"
+						aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+						<h5 class="mb-0" style="float: left;">
+							Terça-feira
+						</h5>
+					</div>
+					<div id="terça" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
 
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p>De manhã: 08:00h-09:30h {{consagrar}}</p>
+								</li>
+								<li class="list-group-item">
+									<p>De noite: 19:30h-21:30h {{cultuar}}</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header btn btn-link" data-toggle="collapse" data-target="#quarta"
+						aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+						<h5 class="mb-0" style="float: left;">
+							Quarta-feira
+						</h5>
+					</div>
+					<div id="quarta" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p>De manhã: 08:00h-09:30h {{consagrar}}</p>
+								</li>
+								<li class="list-group-item">
+									<p>De noite: &#10006;</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header btn btn-link" data-toggle="collapse" data-target="#quinta"
+						aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+						<h5 class="mb-0" style="float: left;">
+							Quinta-feira
+						</h5>
+					</div>
+					<div id="quinta" class="collapse hidden" aria-labelledby=headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p>De manhã: 08:00h-09:30h {{consagrar}}</p>
+								</li>
+								<li class="list-group-item">
+									<p>De noite: 19:30h-21:30h {{cultuar}}</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header btn btn-link" data-toggle="collapse" data-target="#sexta"
+						aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+						<h5 class="mb-0" style="float: left;">
+							Sexta-feira
+						</h5>
+					</div>
+					<div id="sexta" class="collapse hidden" aria-labelledby=headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p>De manhã: 08:00h-09:30h {{consagrar}}</p>
+								</li>
+								<li class="list-group-item">
+									<p>De noite: 19:30h-21:30h {{cultuar}}</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header btn btn-link" data-toggle="collapse" data-target="#sabado"
+						aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+						<h5 class="mb-0" style="float: left;">
+							Sábado
+						</h5>
+					</div>
+					<div id="sabado" class="collapse hidden" aria-labelledby=headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p>De manhã: 08:00h-09:30h {{cultuar}}</p>
+								</li>
+								<li class="list-group-item">
+									<p>De noite: 19:30h-21:30h {{ cultuar }}</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header btn btn-link" data-toggle="collapse" data-target="#domingo"
+						aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+						<h5 class="mb-0" style="float: left;">
+							Domingo
+						</h5>
+					</div>
+					<div id="domingo" class="collapse hidden" aria-labelledby=headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p>De manhã: &#10006;</p>
+								</li>
+								<li class="list-group-item">
+									<p>De noite: 19:30h-21:30h {{ cultuar }}</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
 		</div>
+	</div>
 	</div>
 
 </body>
 <script src="js/main.js"></script>
 <script>
-
-
 
 	function decideParallax(startScrolling = false) {
 		if (typeof startScrolling != "boolean")
@@ -247,6 +345,14 @@
 		$("#mainFrameTitle").first().html(`${embeds.igrejas[selector].titulo}:`)
 		$("#mainFrame").attr("src", embeds.igrejas[selector].src)
 		$(this).first().html(`${embeds.igrejas[selector].next}`)
+	})
+
+	var app = new Vue({
+		el: '#accordion',
+		data: {
+			consagrar: '(Oração e consagração)',
+			cultuar: '(Culto)'
+		}
 	})
 </script>
 
